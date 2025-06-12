@@ -1,18 +1,8 @@
 defmodule ElixirKvTutorial do
-  @moduledoc """
-  Documentation for `ElixirKvTutorial`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> ElixirKvTutorial.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  use Application
+  
+  @impl true
+  def start(_type, _args) do
+    KV.Supervisor.start_link(name: KV.Supervisor)
   end
 end
