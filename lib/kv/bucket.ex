@@ -1,5 +1,5 @@
 defmodule KV.Bucket do
-  use Agent
+  use Agent, restart: :temporary
 
   @doc """
   Starts a new bucket.
@@ -21,14 +21,14 @@ defmodule KV.Bucket do
   def put(bucket, key, value) do
     # server
     Agent.update(bucket, fn state ->
-        # client
-        Map.put(state, key, value)
+      # client
+      Map.put(state, key, value)
     end)
   end
 
   @doc """
   Deletes `key` from `bucket`.
-  
+
   Returns the current value of `key`, if `key` exists.
   """
   def delete(bucket, key) do
