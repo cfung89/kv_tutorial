@@ -1,4 +1,4 @@
-defmodule ElixirKvTutorial do
+defmodule KV do
   use Application
 
   @impl true

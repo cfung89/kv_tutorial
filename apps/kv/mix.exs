@@ -1,9 +1,9 @@
-defmodule ElixirKvTutorial.MixProject do
+defmodule KV.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_kv_tutorial,
+      app: :kv,
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
@@ -19,7 +19,8 @@ defmodule ElixirKvTutorial.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {ElixirKvTutorial, []}
+      env: [routing_table: []],
+      mod: {KV, []}
     ]
   end
 

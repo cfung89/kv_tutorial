@@ -28,9 +28,6 @@ defmodule KV.Router do
   Routing table.
   """
   def table() do
-    [
-      {?a..?m, :foo@computerName},
-      {?n..?z, :bar@computerName}
-    ]
+    Application.fetch_env!(:kv, :routing_table)
   end
 end

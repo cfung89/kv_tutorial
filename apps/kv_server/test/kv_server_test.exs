@@ -5,8 +5,8 @@ defmodule KVServerTest do
   @moduletag :capture_log
 
   setup do
-    Application.stop(:elixir_kv_tutorial)
-    :ok = Application.start(:elixir_kv_tutorial)
+    Application.stop(:kv)
+    :ok = Application.start(:kv)
   end
 
   setup do
@@ -15,7 +15,7 @@ defmodule KVServerTest do
     %{socket: socket}
   end
 
-  @tag :distributed
+  # @tag :distributed
   test "server interaction", %{socket: socket} do
     assert send_and_recv(socket, "UNKNOWN shopping\r\n") ==
              "Unknown command\r\n"

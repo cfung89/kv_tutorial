@@ -26,7 +26,7 @@ defmodule KVServer.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:elixir_kv_tutorial, in_umbrella: true}
+      {:kv, in_umbrella: true}
     ]
   end
 end
